@@ -17,9 +17,18 @@ window.onload=function(){
     // Funtion to sort asecnding 
     function sortCards (){
         let nodes = [...list.children];
-        let sortNodeList =nodes.sort((a,b)=>a.innerText > b.innerText?1:-1);
-        for(let i =0; i<sortNodeList.length; i++){
-         list.appendChild(sortNodeList[i]);
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              let temp;
+              if (nodes[i].innerHTML > nodes[j].innerText) {
+                temp = nodes[i];
+                nodes[i] = nodes[j];
+                nodes[j] = temp;
+              }
+            }
+          }
+        for(let i =0; i<nodes.length; i++){
+         list.appendChild(nodes[i]);
         }
 
     }
