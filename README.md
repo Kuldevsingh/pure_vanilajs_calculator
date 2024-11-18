@@ -1,1 +1,1 @@
-# mearskUICoding
+# pure_vanilajs_calculator
